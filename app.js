@@ -18,7 +18,7 @@ app.options("*", cors());
 app.use(express.json());
 //case study route
 app.use("/api/casestudy", caseStudyRoutes);
-app.use("/api/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+app.use("/", swaggerUi.serve, swaggerUi.setup(specs));
 app.use(notFound);
 app.use(errorHandler);
 
