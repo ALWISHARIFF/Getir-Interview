@@ -66,7 +66,7 @@ const router = express.Router();
  *                 msg:
  *                   type: string
  *                   description: Resource Error
- *                   example: "DatabaseException['user is not allowed to do action [find] on [databaseyyy.products]'"
+ *                   example: "DatabaseException['user is not allowed to do action [find] on [getir-case-study.records]'"
  *                 records:
  *                    type: array
  *                    description: Empty Array Of Records
