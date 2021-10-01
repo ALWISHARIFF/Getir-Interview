@@ -42,7 +42,7 @@ const router = express.Router();
  *               properties:
  *                 code:  
  *                   type: interger
- *                   description: 0-Success, 1-Validation Error, 2-Server Error 
+ *                   description: 0-Success 
  *                   example: 0
  *                 msg:
  *                   type: string
@@ -50,7 +50,7 @@ const router = express.Router();
  *                   example: Success
  *                 records:
  *                    type: array
- *                    description: Contains Key,createdAt and total Count of Records
+ *                    description: [{Key,createdAt and total Count of Records}]
  *                    example: [{key: "ncJegYPU",createdAt: "2015-07-12T15:26:25.191Z",totalCount: 150}]
  *       400:
  *         description: Validation Error - Query Failed         
@@ -61,11 +61,11 @@ const router = express.Router();
  *               properties:
  *                 code:  
  *                   type: interger
- *                   description: 0-Success, 1-Validation Error, 2-Server Error 
+ *                   description:  1-Validation Error 
  *                   example: 1
  *                 msg:
  *                   type: string
- *                   description:  Query Passed, ${Validation Mesage}-Validation Error
+ *                   description: Validation Error Mesage
  *                   example: "\"endDate\" must be in YYYY-MM-DD format"
  *                 records:
  *                    type: array
