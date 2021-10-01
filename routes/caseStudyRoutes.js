@@ -52,6 +52,25 @@ const router = express.Router();
  *                    type: array
  *                    description: [{Key,createdAt and total Count of Records}]
  *                    example: [{key: "ncJegYPU",createdAt: "2015-07-12T15:26:25.191Z",totalCount: 150}]
+ *       500:
+ *         description: Server Error        
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:  
+ *                   type: interger
+ *                   description: 2-Server Error 
+ *                   example: 2
+ *                 msg:
+ *                   type: string
+ *                   description: Resource Error
+ *                   example: "DatabaseException['user is not allowed to do action [find] on [databaseyyy.products]'"
+ *                 records:
+ *                    type: array
+ *                    description: Empty Array Of Records
+ *                    example: []
  *       400:
  *         description: Validation Error - Query Failed         
  *         content:
