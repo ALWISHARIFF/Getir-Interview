@@ -12,9 +12,12 @@ An express,mongoDB, node js api for Querying case studies,its used here to demon
 NODE_ENV=development OR production
 PORT=8080 OR port of choice
 MONGOURI=mongo uri
-URL= http://localhost:8080
+URL= http://localhost:8080 
 
 ```
+**Note**  
+`When adding environment variables in production to heroku the URL should have no port it is the url supplied to you by heroku 
+`   
 ## Method 1: From github
 ### 1) Clone the repository, install node packages  and verify routes locally
 ## PART I: Download & Build on local
