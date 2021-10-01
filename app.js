@@ -21,10 +21,10 @@ app.use(express.json());
 
 //case study route
 app.use("/api/casestudy", caseStudyRoutes);
-
+app.use("/", swaggerUi.serve, swaggerUi.setup(specs));
 //404 Route
 app.use(notFound);
 // Error Handler
 app.use(errorHandler);
-app.use("/", swaggerUi.serve, swaggerUi.setup(specs));
+
 export default app;
