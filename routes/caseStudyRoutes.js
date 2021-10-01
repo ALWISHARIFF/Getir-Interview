@@ -88,11 +88,28 @@ const router = express.Router();
  *                   example: "\"endDate\" must be in YYYY-MM-DD format"
  *                 records:
  *                    type: array
- *                    description: Contains Key,createdAt and total Count of Records
+ *                    description: Empty Array
  *                    example: []
  *       404:
- *         description: Resource Not Found Error          
- *         
+ *         description: Resource Not Found          
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 code:  
+ *                   type: interger
+ *                   description:  3 - Resource Not Found  
+ *                   example: 3
+ *                 msg:
+ *                   type: string
+ *                   description: Validation Error Mesage
+ *                   example: "Not Found - /api/casestudyd"
+ *                 records:
+ *                    type: array
+ *                    description: Empty Array
+ *                    example: []
+ 
                           
 */
 //casestudy root Route /api/casestudy/
