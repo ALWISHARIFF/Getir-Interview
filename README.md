@@ -12,7 +12,7 @@ An express,mongoDB, node js api for Querying case studies,its used here to demon
 NODE_ENV=development OR production
 PORT=8080 OR port of choice
 MONGOURI=mongo uri
-URL= http://localhost
+URL= http://localhost:8080
 
 ```
 ## Method 1: From github

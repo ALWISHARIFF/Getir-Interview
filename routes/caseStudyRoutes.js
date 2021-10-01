@@ -76,6 +76,7 @@ const router = express.Router();
  *         
                           
 */
+//casestudy root Route /api/casestudy/
 router.route("/").post(searchCaseStudy);
 
 export default router;

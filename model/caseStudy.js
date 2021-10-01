@@ -1,4 +1,6 @@
+//import mongoose
 import mongoose from "mongoose";
+//caseStudy Schema
 const caseStudySchema = mongoose.Schema(
   {
     key: String,
@@ -8,7 +10,7 @@ const caseStudySchema = mongoose.Schema(
   },
   
 );
-
+//Create Model
 const caseStudy = mongoose.model("records", caseStudySchema);
 
 export default caseStudy;

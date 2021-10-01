@@ -1,9 +1,9 @@
 //Mongoose Import
 import mongoose from 'mongoose'
 
-//Connect Function to MongoDB
+//Disconnect Function to MongoDB
 export default async function disconnectDb() {
-  // Use connect method to connect to the server
+  // Use Disconnect method to disconnect from the database
   try {
     const conn = await mongoose.disconnect()
     console.log(`MongoDB Disconnected`);

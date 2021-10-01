@@ -5,14 +5,17 @@ import { caseStudyValidation } from "../validators/validation.js";
 // @desc    Search Case Studies
 // @route   POST /api/casestudy
 export const searchCaseStudy = asyncHandler(async (req, res) => {
+  //Validate POST DATA
   const { error } = caseStudyValidation(req.body);
   const { startDate, endDate, minCount, maxCount } = req.body;
+  //validation Error Send 400,code:1,msg:"Description Validation Error"
   if (error)
     return res
       .status(400)
       .json({ code: 1, msg: error.details[0].message, records: [] });
 //PipeLine
   const docs = await caseStudy.aggregate([
+    //Filter Date Range to fit Payload standards
     {
       $match: {
         createdAt: {
@@ -21,11 +24,13 @@ export const searchCaseStudy = asyncHandler(async (req, res) => {
         },
       },
     },
+    //Add totalCountField & and sum the Counts Array
     {
       $addFields: {
         totalCount: { $sum: "$counts" },
       },
     },
+    //Filter the result prune some fields
     {
       $project: {
         _id: 0,
@@ -33,6 +38,7 @@ export const searchCaseStudy = asyncHandler(async (req, res) => {
         value: 0,
       },
     },
+    //Match out the result to fit the payload total count be in range of minCount & maxCount
     {
       $match: {
         totalCount: {
@@ -42,10 +48,12 @@ export const searchCaseStudy = asyncHandler(async (req, res) => {
       },
     },
   ]);
+  //Received records>0
   if(docs.length>0){
     res.status(200).json({ code: 0, msg: "Success", records: docs });
-
+ 
   }else{
+     //No Records 
     res.status(200).json({ code: 0, msg: "Success", records: [] });
 
   }
