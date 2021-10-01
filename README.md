@@ -28,7 +28,7 @@ URL= http://localhost:8080
 ``` 
 //on local
 git clone https://github.com/ALWISHARIFF/Getir-Interview.git
-cd GETIR CASE STUDY
+cd Getir-Interview
 npm install
 npm start
 ```
@@ -46,7 +46,7 @@ Open your local browser and verify the sample-node-api is working by accessing:
 The `node_modules` folder will not be transferred.(.gitignore{.env,/node_modules})
 
 ```
-cd GETIR CASE STUDY
+cd Getir-Interview
 heroku login
 heroku create
 git push heroku main
