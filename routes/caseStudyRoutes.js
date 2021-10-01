@@ -34,7 +34,7 @@ const router = express.Router();
  *                 example: 1000
  *     responses:
  *       200:
- *         description: Success - Query Passed         
+ *         description: Success          
  *         content:
  *           application/json:
  *             schema:
@@ -72,7 +72,7 @@ const router = express.Router();
  *                    description: Empty Array Of Records
  *                    example: []
  *       400:
- *         description: Validation Error - Query Failed         
+ *         description: Validation Error         
  *         content:
  *           application/json:
  *             schema:
@@ -91,7 +91,7 @@ const router = express.Router();
  *                    description: Contains Key,createdAt and total Count of Records
  *                    example: []
  *       404:
- *         description: Resource Not Found Error - Query Failed         
+ *         description: Resource Not Found Error          
  *         
                           
 */
